@@ -1,5 +1,6 @@
 package test.bwie.com.date20170512;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         //创建适配器
 
         final ArrayList<Bean> list_b = new ArrayList<>();
+        final ArrayList<String> list_c = new ArrayList<>();
         for (int i = 0; i < 200; i++) {
             String name = "条目：" + (1 + i);
             list_b.add(new Bean(name, false));
@@ -38,7 +40,24 @@ public class MainActivity extends AppCompatActivity {
         Button quanxuan = (Button) findViewById(R.id.quanxuan);
         Button quanbuxuan = (Button) findViewById(R.id.quanbuxuan);
         Button fanxuan = (Button) findViewById(R.id.fanxuan);
+        Button queding = (Button) findViewById(R.id.queding);
 
+        queding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Second.class);
+                list_c.clear();
+                for (int i = 0; i < list_b.size(); i++) {
+                    if (list_b.get(i).isCheck()) {
+                        list_c.add(list_b.get(i).getName());
+                    }
+                }
+                intent.putExtra("list", list_c);
+                startActivity(intent);
+
+
+            }
+        });
         quanxuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
