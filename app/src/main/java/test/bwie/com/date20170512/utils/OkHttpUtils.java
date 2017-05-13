@@ -17,13 +17,13 @@ import okhttp3.logging.HttpLoggingInterceptor;
 
 public class OkHttpUtils {
 
-    private static OkHttpClient mClient;
     //设置标题头格式
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    private static OkHttpClient mClient;
 
     private OkHttpUtils() {
     }
-
+//00
 
     public static OkHttpClient getOkHttpClient() {
         if (mClient == null) {
