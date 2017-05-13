@@ -13,12 +13,12 @@
         android:textSize="25sp" />
 
     <ImageView
-        android:id="@+id/item_image"
+        android:id="@+id/item2_image1"
         android:layout_width="50dp"
         android:layout_height="80dp" />
 
     <TextView
-        android:id="@+id/item_text"
+        android:id="@+id/item2_text"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_weight="1"
@@ -26,5 +26,9 @@
         android:text="aaa"
         android:textSize="25sp" />
 
+    <ImageView
+        android:id="@+id/item2_image2"
+        android:layout_width="50dp"
+        android:layout_height="80dp" />
 
 </LinearLayout>
